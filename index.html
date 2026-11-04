@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7ff">
+  <meta name="description" content="Learn JHS algebra with an interactive equation balance, expression substitution, patterns, and practice.">
+  <title>Algebra Lab — JHS Math</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home"><span class="brand-icon" aria-hidden="true">x</span><span>JHS <strong>Math Lab</strong></span></a>
+    <nav aria-label="Main navigation"><a href="#balance">Balance</a><a href="#expressions">Expressions</a><a href="#patterns">Patterns</a><a href="#practice">Practice</a></nav>
+    <span class="level-tag">JHS · Algebra</span>
+  </header>
+  <main id="home">
+    <section class="hero"><div class="hero-copy"><p class="eyebrow">MAKE THE UNKNOWN KNOWN</p><h1>Algebra is a<br><span>puzzle to solve.</span></h1><p>Explore equations like a balance, substitute values into expressions, spot number patterns, and practise one step at a time.</p><a class="button primary" href="#balance">Start exploring <span aria-hidden="true">↓</span></a></div>
+      <div class="hero-art" aria-hidden="true"><div class="hero-equation">3x + 2 = 14</div><svg viewBox="0 0 360 220"><line x1="180" y1="45" x2="180" y2="165" stroke="#4567e8" stroke-width="8" stroke-linecap="round"/><line x1="65" y1="95" x2="295" y2="95" stroke="#4567e8" stroke-width="8" stroke-linecap="round"/><path d="M65 95 L35 145 H95 Z" fill="#dce6ff" stroke="#4567e8" stroke-width="3"/><path d="M295 95 L265 145 H325 Z" fill="#e6f7f2" stroke="#36a88a" stroke-width="3"/><line x1="180" y1="165" x2="105" y2="190" stroke="#4567e8" stroke-width="6"/><line x1="180" y1="165" x2="255" y2="190" stroke="#4567e8" stroke-width="6"/><line x1="95" y1="190" x2="265" y2="190" stroke="#4567e8" stroke-width="6" stroke-linecap="round"/><circle cx="180" cy="45" r="10" fill="#ff8967"/><text x="45" y="137">x</text><text x="273" y="137">14</text></svg><span class="hero-caption">Keep both sides equal</span></div>
+    </section>
+
+    <section class="section" id="balance"><div class="section-heading"><div><p class="eyebrow">01 · EQUATION BALANCE</p><h2>Keep both sides equal.</h2></div><p>An equation is like a balanced scale. Whatever you do to one side, do to the other. Try solving a simple equation.</p></div>
+      <div class="balance-card"><div class="balance-visual"><div class="balance-equation"><span id="balance-left">x + 3</span><span class="equals">=</span><span id="balance-right">8</span></div><svg viewBox="0 0 460 190" role="img" aria-label="A balance scale showing two equal sides"><line x1="230" y1="30" x2="230" y2="145" stroke="#536fdc" stroke-width="8" stroke-linecap="round"/><line id="scale-beam" x1="82" y1="72" x2="378" y2="72" stroke="#536fdc" stroke-width="8" stroke-linecap="round"/><circle cx="230" cy="72" r="12" fill="#ff8967"/><path d="M170 145 L290 145 L230 72 Z" fill="#e5eaff" stroke="#536fdc" stroke-width="4"/><line x1="160" y1="82" x2="125" y2="133" stroke="#43b99b" stroke-width="3"/><line x1="160" y1="82" x2="195" y2="133" stroke="#43b99b" stroke-width="3"/><path d="M108 133 H212 L195 154 H125 Z" fill="#e6f7f2" stroke="#43b99b" stroke-width="3"/><line x1="300" y1="82" x2="265" y2="133" stroke="#4567e8" stroke-width="3"/><line x1="300" y1="82" x2="335" y2="133" stroke="#4567e8" stroke-width="3"/><path d="M248 133 H352 L335 154 H265 Z" fill="#edf1ff" stroke="#4567e8" stroke-width="3"/><line x1="180" y1="175" x2="280" y2="175" stroke="#536fdc" stroke-width="8" stroke-linecap="round"/></svg><p class="scale-caption" id="scale-caption">Both sides are equal.</p></div>
+        <div class="balance-controls"><p class="eyebrow">SOLVE THE EQUATION</p><h3 id="equation-title">x + 3 = 8</h3><p class="muted">Choose an operation to undo the number next to x. Apply it to both sides.</p><div class="step-display"><span>YOUR STEPS</span><strong id="solution-step">x + 3 = 8</strong><small id="solution-help">What operation will undo +3?</small></div><div class="operation-buttons"><button type="button" class="operation" data-op="subtract">Subtract 3 from both sides</button><button type="button" class="operation" data-op="add">Add 3 to both sides</button></div><p id="balance-feedback" class="feedback" aria-live="polite">Choose an operation to begin.</p><button id="new-equation" class="button secondary" type="button">Try another equation</button></div>
+      </div>
+    </section>
+
+    <section class="section tinted" id="expressions"><div class="section-heading"><div><p class="eyebrow">02 · SUBSTITUTE &amp; EVALUATE</p><h2>Give the letter a value.</h2></div><p>Substitution means replacing a variable with a number. Choose a value for x and calculate the expression.</p></div>
+      <div class="substitution-card"><div class="substitution-visual"><span class="expression-label">YOUR EXPRESSION</span><strong id="expression">3x + 2</strong><div class="equals-large">=</div><div id="substitution-steps" class="substitution-steps">3 × 4 + 2</div><div class="answer-chip"><span>VALUE</span><strong id="expression-result">14</strong></div></div><div class="substitution-controls"><label class="field-label" for="expression-choice">Choose an expression</label><select id="expression-choice"><option value="3x+2">3x + 2</option><option value="2x-5">2x − 5</option><option value="x²+1">x² + 1</option><option value="4(x+2)">4(x + 2)</option></select><label class="range-label" for="x-value"><span>Value of x</span><output id="x-output" for="x-value">4</output></label><input id="x-value" type="range" min="-5" max="10" value="4"><p class="tip"><strong>Tip:</strong> Replace each x with its value, then follow the order of operations.</p></div></div>
+    </section>
+
+    <section class="section" id="patterns"><div class="section-heading"><div><p class="eyebrow">03 · NUMBER PATTERNS</p><h2>What comes next?</h2></div><p>Look at how the sequence changes each time. Identify the rule and predict the next number.</p></div>
+      <div class="pattern-card"><div class="pattern-top"><span class="eyebrow">SEQUENCE CHALLENGE</span><span id="pattern-count" class="pattern-count">PATTERN 1 OF 3</span></div><h3 id="pattern-prompt">Add 4 each time. What are the next two numbers?</h3><div id="sequence" class="sequence"></div><form id="pattern-form" class="pattern-form"><label for="next-one">Next numbers</label><input id="next-one" type="number" placeholder="Next" required><input id="next-two" type="number" placeholder="Then" required><button class="button primary" type="submit">Check pattern</button></form><p id="pattern-feedback" class="feedback" aria-live="polite"></p><button id="next-pattern" type="button" class="text-button">Try another pattern →</button></div>
+    </section>
+
+    <section class="section practice-section" id="practice"><div class="section-heading"><div><p class="eyebrow">04 · PRACTICE</p><h2>Algebra check-in.</h2></div><p>Answer four questions. Get immediate feedback and an explanation for each one.</p></div>
+      <div class="quiz-card"><div class="quiz-progress"><span id="quiz-count">QUESTION 1 OF 4</span><div class="progress-track"><span id="progress-fill"></span></div></div><h3 id="question">Solve: x + 5 = 12</h3><div id="answers" class="answers" role="group" aria-label="Answer choices"></div><p id="quiz-feedback" class="feedback" aria-live="polite"></p><div class="quiz-footer"><span id="score">Score: 0</span><button class="button primary" id="quiz-action" type="button" disabled>Check answer</button></div></div>
+    </section>
+    <section class="finish-banner"><div><p class="eyebrow">KEEP THINKING</p><h2>Every variable has a value.</h2><p>Use a rule, keep the balance, and check your answer.</p></div><a class="button light" href="#balance">Explore again <span aria-hidden="true">↑</span></a></section>
+  </main><footer><span>JHS Math Lab · Algebra</span><span>Made for curious learners ✦</span></footer>
+</body>
+</html>
